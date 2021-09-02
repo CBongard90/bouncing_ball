@@ -1,7 +1,7 @@
 :root {
   --boxColor: rgba(32, 223, 213, 0.5);
   --rotateSpeed: 60s;
-  --bounceSpeed: 2s;
+  --bounceSpeed: 3s;
 }
 
 body {
@@ -44,7 +44,19 @@ body {
   bottom: -1em;
   left: -1em;
   transform-style: preserve-3d;
+  animation: cubeHeight var(--bounceSpeed) infinite linear;
 }
+@keyframes cubeHeight {
+  0%,100%{
+    height:1.5em;
+  }
+  8%,93.5%{
+    height: 2em;
+  }
+}
+
+
+
 .left,
 .right,
 .front,
@@ -82,6 +94,7 @@ body {
 .bottom {
   transform: translateY(50%) rotateX(90deg);
   box-shadow: 0 0 0.5em #000a;
+  bottom: 0;
 }
 
 .ball {
@@ -98,7 +111,7 @@ body {
 }
 @keyframes ballBounce {
   0%,100%{
-    bottom: 1em;
+    bottom: 0.5em;
   }
   50%{
     bottom:3em;
@@ -116,7 +129,10 @@ body {
 
 }
 @keyframes ballShadow {
-  0%,100%{
+  0%,
+  8%,
+  93.5%,
+  100%{
     transform: scale(1);
     opacity: 1;
   }
