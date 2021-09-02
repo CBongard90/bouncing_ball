@@ -1,5 +1,6 @@
 :root {
   --boxColor: rgba(32, 223, 213, 0.5);
+  --rotateSpeed: 60s;
 }
 
 body {
@@ -16,12 +17,19 @@ body {
 .scene {
   position: relative;
   transform-style: preserve-3d;
+  /* Animation Section */
+  animation: sceneRotate var(--rotateSpeed) infinite linear;
+}
+@keyframes sceneRotate {
+  to{
+    transform: rotateY(360deg);
+  }
 }
 
 .floor {
   width: 15em;
   height: 15em;
-  background-image: radial-gradient(#0000, #000 100%),
+  background-image: radial-gradient(#0000, #000 75%),
   repeating-conic-gradient(from 45deg, #111 0deg 90deg, #222 90deg 180deg);
   background-size: 100%, 1em 1em;
   position: absolute;
@@ -84,6 +92,7 @@ body {
   left: -0.5em;
   bottom: 1em;
   background-image: radial-gradient(circle at top, #fff, 40%, #000);
+  animation: sceneRotate var(--rotateSpeed) infinite linear reverse;
 }
 .ballShadow{
   position: absolute;
