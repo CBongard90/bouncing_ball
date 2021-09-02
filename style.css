@@ -1,29 +1,44 @@
-:root{
-    --boxColor:rgba(32,223,213,0.65);
+:root {
+  --boxColor: rgba(32, 223, 213, 0.65);
 }
 
-body{
-    background-color: black;
-    min-height: 100vh;
-    font-size: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  background-color: hsl(0, 0%, 0%);
+  min-height: 100vh;
+  font-size: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
-.ball{
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    background-color: white;
+.scene {
+  position: relative;
 }
-.floor{
-    width: 5em;
-    height: 5em;
-    background-image:radial-gradient(#0000, #000 100%), repeating-conic-gradient(from 45deg, #111 0deg 90deg, #222 90deg 180deg);
-    background-size: 100%, 1em 1em;
+
+.ball {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+  position: absolute;
+  left: -0.5em;
+  bottom: 1em;
 }
-.cube{
-    width: 2em;
-    height: 2em;
-    background-color: var(--boxColor);
+.floor {
+  width: 5em;
+  height: 5em;
+  background-image: radial-gradient(#0000, #000 100%),
+    repeating-conic-gradient(from 45deg, #111 0deg 90deg, #222 90deg 180deg);
+  background-size: 100%, 1em 1em;
+  position: absolute;
+  top: 1em;
+  transform: translate(-50%,-50%);
+}
+.cube {
+  width: 2em;
+  height: 2em;
+  background-color: var(--boxColor);
+  position: absolute;
+  bottom: -1em;
+  left: -1em;
 }
